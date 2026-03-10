@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
 
     # Your App
     'clients',
@@ -135,6 +136,18 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # --------------------------------------------------
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+# --------------------------------------------------
+# Django REST Framework
+# --------------------------------------------------
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "clients.authentication.ExpiringTokenAuthentication",
+    ],
+}
+
+TOKEN_TTL_HOURS = 2
 
 
 # Default PK

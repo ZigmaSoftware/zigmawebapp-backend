@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 
 def validate_full_name(value):
     if len(value.strip()) < 3:
-        raise ValidationError("Full name must contain at least 3 characters")
+        raise ValidationError("Full name must contain atleast 3 characters")
 
 
 def validate_phone(value):
@@ -30,4 +30,4 @@ def validate_resume(value):
 
 def validate_cover_letter(value):
     if value and len(value.strip()) < 10:
-        raise ValidationError("Cover letter must contain at least 10 characters")
+        raise ValidationError("Cover letter must contain atleast 10 characters")
